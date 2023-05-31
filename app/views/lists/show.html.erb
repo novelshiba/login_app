@@ -1,0 +1,13 @@
+<h1>投稿詳細</h1>
+
+<h2>タイトル</h2>
+<p><%= @list.title %></p>
+
+<h2>本文</h2>
+<p><%= @list.body %></p>
+
+
+<% if @list.user == current_user %>
+  <%= link_to "編集", edit_list_path(@list) %>
+  <%= link_to "削除", list_path(@list), data: { "turbo-method": :delete } %>
+<% end %>
